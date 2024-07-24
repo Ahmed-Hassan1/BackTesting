@@ -1,0 +1,1315 @@
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 46, in homePage
+    data = pd.read_csv("/static/ES_1min_sample.csv")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/static/ES_1min_sample.csv'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 45, in homePage
+    data = pd.read_csv("/static/media/ES_1min_sample.csv")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/static/media/ES_1min_sample.csv'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 45, in homePage
+    data = pd.read_csv("/static/media/ES_1min_sample.csv")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/static/media/ES_1min_sample.csv'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 59, in homePage
+    bt.plot(filename="aaa")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1592, in plot
+    return plot(
+           ^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 203, in plot
+    df, indicators, equity_data, trades = _maybe_resample_data(
+                                          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 153, in _maybe_resample_data
+    trades = trades.assign(count=1).resample(freq, on='ExitTime', label='right').agg(dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\resample.py", line 352, in aggregate
+    result = ResamplerWindowApply(self, func, args=args, kwargs=kwargs).agg()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 190, in agg
+    return self.agg_dict_like()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 423, in agg_dict_like
+    return self.agg_or_apply_dict_like(op_name="agg")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 1608, in agg_or_apply_dict_like
+    result_index, result_data = self.compute_dict_like(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 497, in compute_dict_like
+    getattr(obj._gotitem(key, ndim=1), op_name)(how, **kwargs)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 294, in aggregate
+    return self._python_agg_general(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 327, in _python_agg_general
+    result = self._grouper.agg_series(obj, f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 864, in agg_series
+    result = self._aggregate_series_pure_python(obj, func)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 885, in _aggregate_series_pure_python
+    res = func(group)
+          ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 324, in <lambda>
+    f = lambda x: func(x, *args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 148, in f
+    new_bar_idx = new_index.get_loc(mean_time, method='nearest')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Index.get_loc() got an unexpected keyword argument 'method'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 59, in homePage
+    bt.plot()
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1592, in plot
+    return plot(
+           ^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 203, in plot
+    df, indicators, equity_data, trades = _maybe_resample_data(
+                                          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 153, in _maybe_resample_data
+    trades = trades.assign(count=1).resample(freq, on='ExitTime', label='right').agg(dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\resample.py", line 352, in aggregate
+    result = ResamplerWindowApply(self, func, args=args, kwargs=kwargs).agg()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 190, in agg
+    return self.agg_dict_like()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 423, in agg_dict_like
+    return self.agg_or_apply_dict_like(op_name="agg")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 1608, in agg_or_apply_dict_like
+    result_index, result_data = self.compute_dict_like(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 497, in compute_dict_like
+    getattr(obj._gotitem(key, ndim=1), op_name)(how, **kwargs)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 294, in aggregate
+    return self._python_agg_general(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 327, in _python_agg_general
+    result = self._grouper.agg_series(obj, f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 864, in agg_series
+    result = self._aggregate_series_pure_python(obj, func)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 885, in _aggregate_series_pure_python
+    res = func(group)
+          ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 324, in <lambda>
+    f = lambda x: func(x, *args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 148, in f
+    new_bar_idx = new_index.get_loc(mean_time, method='nearest')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Index.get_loc() got an unexpected keyword argument 'method'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 61, in homePage
+    return render(request,bt.plot(),{'result':stats})
+                          ^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1592, in plot
+    return plot(
+           ^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 203, in plot
+    df, indicators, equity_data, trades = _maybe_resample_data(
+                                          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 153, in _maybe_resample_data
+    trades = trades.assign(count=1).resample(freq, on='ExitTime', label='right').agg(dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\resample.py", line 352, in aggregate
+    result = ResamplerWindowApply(self, func, args=args, kwargs=kwargs).agg()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 190, in agg
+    return self.agg_dict_like()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 423, in agg_dict_like
+    return self.agg_or_apply_dict_like(op_name="agg")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 1608, in agg_or_apply_dict_like
+    result_index, result_data = self.compute_dict_like(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 497, in compute_dict_like
+    getattr(obj._gotitem(key, ndim=1), op_name)(how, **kwargs)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 294, in aggregate
+    return self._python_agg_general(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 327, in _python_agg_general
+    result = self._grouper.agg_series(obj, f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 864, in agg_series
+    result = self._aggregate_series_pure_python(obj, func)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 885, in _aggregate_series_pure_python
+    res = func(group)
+          ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 324, in <lambda>
+    f = lambda x: func(x, *args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 148, in f
+    new_bar_idx = new_index.get_loc(mean_time, method='nearest')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Index.get_loc() got an unexpected keyword argument 'method'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 59, in homePage
+    bt.plot(open_browser=False)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1592, in plot
+    return plot(
+           ^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 203, in plot
+    df, indicators, equity_data, trades = _maybe_resample_data(
+                                          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 153, in _maybe_resample_data
+    trades = trades.assign(count=1).resample(freq, on='ExitTime', label='right').agg(dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\resample.py", line 352, in aggregate
+    result = ResamplerWindowApply(self, func, args=args, kwargs=kwargs).agg()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 190, in agg
+    return self.agg_dict_like()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 423, in agg_dict_like
+    return self.agg_or_apply_dict_like(op_name="agg")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 1608, in agg_or_apply_dict_like
+    result_index, result_data = self.compute_dict_like(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\apply.py", line 497, in compute_dict_like
+    getattr(obj._gotitem(key, ndim=1), op_name)(how, **kwargs)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 294, in aggregate
+    return self._python_agg_general(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 327, in _python_agg_general
+    result = self._grouper.agg_series(obj, f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 864, in agg_series
+    result = self._aggregate_series_pure_python(obj, func)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\ops.py", line 885, in _aggregate_series_pure_python
+    res = func(group)
+          ^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\groupby\generic.py", line 324, in <lambda>
+    f = lambda x: func(x, *args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\_plotting.py", line 148, in f
+    new_bar_idx = new_index.get_loc(mean_time, method='nearest')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Index.get_loc() got an unexpected keyword argument 'method'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 62, in homePage
+    redirect(Path(__file__).resolve().parent.parent+"/RsiOsci.html")
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'WindowsPath' and 'str'
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.security.DisallowedRedirect:Unsafe redirect to URL with protocol 'c'
+WARNING:django.request:Bad Request: /
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.security.DisallowedRedirect:Unsafe redirect to URL with protocol 'c'
+WARNING:django.request:Bad Request: /
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.security.DisallowedRedirect:Unsafe redirect to URL with protocol 'c'
+WARNING:django.request:Bad Request: /
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    return render(request,str(Path(__file__).resolve().parent.parent)+"/RsiOsci.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: C:\STUFF\E\django\BacktestingEngine\BackTest/RsiOsci.html
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    return render(request,"RsiOsci.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: RsiOsci.html
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\BackTest\settings.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    return render(request,"RsiOsci.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: RsiOsci.html
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    redirect(request,"RsiOsci.html")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: GET '/'>' not found. '<WSGIRequest: GET '/'>' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    redirect(request,"RsiOsci.html")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: GET '/'>' not found. '<WSGIRequest: GET '/'>' is not a valid view function or pattern name.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    redirect(request,"../RsiOsci.html")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: GET '/'>' not found. '<WSGIRequest: GET '/'>' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 63, in homePage
+    redirect(request,"../RsiOsci.html")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\urls\resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: GET '/'>' not found. '<WSGIRequest: GET '/'>' is not a valid view function or pattern name.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 65, in homePage
+    return render(request,".../RsiOsci.html",{'result':1})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: .../RsiOsci.html
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 65, in homePage
+    return render(request,"../RsiOsci.html",{'result':1})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ../RsiOsci.html
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\STUFF\E\django\BacktestingEngine\BackTest\BackTest\settings.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'c}"],["Equity","@equity{+0,0.[000]'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 67, in homePage
+    return render(request,"RsiOsci.html",{'result':1})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 531, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 24: 'c}"],["Equity","@equity{+0,0.[000]'. Did you forget to register or load this tag?
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return render(request,"bt/home.html",{'result':dict(stats.to_json())})
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return render(request,"bt/home.html",{'result':stats.to_dict()})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' Time [%]' from 'result.Exposure Time [%]'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return render(request,"bt/home.html",{'result':stats.to_dict()})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\defaulttags.py", line 203, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 5. 
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return render(request,"bt/home.html",{'result':stats.to_dict()})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\defaulttags.py", line 203, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 5. 
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return render(request,"bt/home.html",{'result':stats.to_dict()})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\template\defaulttags.py", line 203, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 5. 
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 62, in homePage
+    print(stats.to_dict()["_trades"][0])
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 0
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 62, in homePage
+    print(stats.to_dict()["_trades"])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 0
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return HttpResponse(stats.to_frame()['_trades'].to_html())
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: '_trades'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 69, in homePage
+    return HttpResponse(stats['_trades'].to_frame().to_html())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'to_frame'
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 72, in homePage
+    stats_df.drop("_equity_curve",axis="columns")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['_equity_curve'] not found in axis"
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 72, in homePage
+    #stats_df.drop("_equity_curve",axis="columns")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['_equity_curve'] not found in axis"
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 72, in homePage
+    stats_df.drop("_equity_curve",axis="columns")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['_equity_curve'] not found in axis"
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 72, in homePage
+    stats_df.drop("_equity_curve",axis="columns")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['_equity_curve'] not found in axis"
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 576, in _get_axis_number
+    return cls._AXIS_TO_AXIS_NUMBER[axis]
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'row'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 72, in homePage
+    stats_df.drop("_equity_curve",axis="row")
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4773, in drop
+    axis_name = self._get_axis_name(axis)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 583, in _get_axis_name
+    axis_number = cls._get_axis_number(axis)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 578, in _get_axis_number
+    raise ValueError(f"No axis named {axis} for object type {cls.__name__}")
+ValueError: No axis named row for object type DataFrame
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\range.py", line 413, in get_loc
+    return self._range.index(new_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 1 is not in range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[1])
+          ~~~~~~~~^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\range.py", line 415, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df.drop([30,31]))
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df.drop([30,31],axis="rows"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df["_trades"])
+          ~~~~~~~~^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: '_trades'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 78, in homePage
+    return render(request,"bt/home.html",{'result':stats.to_dict(),"trades":stats_df.to_frame().to_html()})
+                                                                           ^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'to_frame'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31]))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    print(stats_df[0].drop([30,31],axis="index"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 71, in homePage
+    #stats_df.drop("_equity_curve",axis="columns")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\series.py", line 5356, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[30, 31] not found in axis'
