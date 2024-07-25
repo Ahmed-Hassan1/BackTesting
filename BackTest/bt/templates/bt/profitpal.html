@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.5.0.min.js"></script>
+    <title>Profit Pal</title>
+</head>
+<body>
+    <h1>Settings</h1>
+    <form action="{% url 'profitpal' %}" style="display: flex; flex-direction: column; width: 400px; gap: 10px;">
+        <div>
+            <label for="StartTime">Start Time</label>
+            <input type="text" name="StartTime" id="startTime" placeholder="Start Time" value="08:40:00">
+        </div>
+        
+        <div>
+            <label for="EndTime">End Time</label>
+            <input type="text" name="EndTime" id="endTime" placeholder="End Time" value="09:50:00">
+        </div>
+        
+
+        <div>
+            <label for="TP">Target Ticks</label>
+            <input type="text" name="TP" id="TP" placeholder="Target Ticks" value="17">
+        </div>
+        
+
+        <div>
+            <label for="SL">Stop Ticks</label>
+            <input type="text" name="SL" id="SL" placeholder="Stop Ticks" value="23">
+        </div>
+        
+
+        <div>
+            <label for="smaFilter">Enable SMA Filter</label>
+            <input type="checkbox" name="smaFilter" id="smaFilter" checked>
+        </div>
+        
+        <div>
+            <label for="SMALength">SMA Length</label>
+            <input type="text" name="SMALength" id="SMALength" placeholder="SMA Length" value="1650">
+        </div>
+        
+        <div>
+            <label for="bLength">Bollinger Length</label>
+            <input type="text" name="bLength" id="bLength" placeholder="Bollinger Length" value="21">
+        </div>
+        
+
+        <div>
+            <label for="bDev">Bollinger Deviation</label>
+            <input type="text" name="bDev" id="bDev" placeholder="Bollinger Deviation" value="2.4">
+        </div>
+        
+
+        <div>
+            <label for="adxLen">ADX Length</label>
+            <input type="text" name="adxLen" id="adxLen" placeholder="ADX Length" value="14">
+        </div>
+        
+
+        <div>
+            <label for="minADX">Min ADX</label>
+            <input type="text" name="minADX" id="minADX" placeholder="Min ADX" value="0">
+        </div>
+        
+
+        <div>
+            <label for="maxADX">Max ADX</label>
+            <input type="text" name="maxADX" id="maxADX" placeholder="Max ADX" value="100">
+        </div>
+        
+
+        <div>
+            <label for="atrLen">ATR Length</label>
+            <input type="text" name="atrLen" id="atrLen" placeholder="ATR Length" value="14">
+        </div>
+        
+
+        <div>
+            <label for="minATR">Min ATR</label>
+            <input type="text" name="minATR" id="minATR" placeholder="Min ATR" value="0">
+        </div>
+        
+
+        <div>
+            <label for="maxATR">Max ATR</label>
+            <input type="text" name="maxATR" id="maxATR" placeholder="Max ATR" value="100">
+        </div>
+        
+
+        <div>
+            <label for="bMin">Bollinger Band Width Minimum</label>
+            <input type="text" name="bMin" id="bMin" placeholder="Bollinger Band Width Minimum" value="1">
+        </div>
+        
+
+        <div>
+            <label for="bMax">Bollinger Band Width Maximum</label>
+            <input type="text" name="bMax" id="bMax" placeholder="Bollinger Band Width Maximum" value="100">
+        </div>
+        
+
+        <!-- <div>
+            <label for="beforeEntry">Confirmation Before Entry</label>
+            <input type="checkbox" name="beforeEntry" id="beforeEntry">
+        </div> -->
+
+        <div>
+            <label for="rsiFilter">RSI Entry Filter Enabled</label>
+            <input type="checkbox" name="rsiFilter" id="rsiFilter">
+        </div>
+
+        <div>
+            <label for="rsiLen">RSI Entry Period</label>
+            <input type="text" name="rsiLen" id="rsiLen" placeholder="RSI Entry Period" value="14">
+        </div>
+        
+
+        <div>
+            <label for="OB">Entry Overbought Value</label>
+            <input type="text" name="OB" id="OB" placeholder="Entry Overbought Value" value="80">
+        </div>
+        
+
+        <div>
+            <label for="OS">Entry Oversold Value</label>
+            <input type="text" name="OS" id="OS" placeholder="Entry Oversold Value" value="20">
+        </div>
+        
+
+        <!-- <div>
+            <label for="maxProfit">Max Daily Profit</label>
+            <input type="text" name="maxProfit" id="maxProfit" placeholder="Max Daily Profit" value="2500">
+        </div>
+        
+
+        <div>
+            <label for="maxLoss">Max Daily Loss</label>
+            <input type="text" name="maxLoss" id="maxLoss" placeholder="Max Daily Loss" value="2500">
+        </div> -->
+        
+
+        <button type="submit">RUN</button>
+    </form>
+
+
+
+    <h1>Stats</h1>
+    {{stats|safe}}
+
+    <hr>
+    <h1>Trades</h1>
+    {{trades|safe}}
+
+
+
+    <h1>Chart</h1>
+    
+
+    <div hx-get="/test" hx-swap="innerHTML">
+        SHOW Interactive chart
+    </div>
+
+
+    <script src="/static/js/htmx.min.js"></script>
+</body>
+</html>

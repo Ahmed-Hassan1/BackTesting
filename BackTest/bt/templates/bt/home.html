@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
 </head>
+
 <body>
-    <h1>Stats</h1>
-    {{stats|safe}}
+    <h1>Profit Pal BackTesting: </h1>
+    <a href="{% url 'profitpal' %}" style="font-size: 2rem;">Profit Pal</a>
 
-    <hr>
-    {{trades|safe}}
 
-    
+
+
+    <script src="/static/js/htmx.min.js"></script>
 </body>
+
 </html>
