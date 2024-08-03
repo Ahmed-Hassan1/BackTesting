@@ -1,134 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.5.0.min.js"></script>
     <title>Profit Pal</title>
+
+    <style>
+        /* CSS */
+        .button-2 {
+            background-color: rgb(0, 13, 134);
+            border-radius: 8px;
+            border-width: 0;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 10px 12px;
+            text-align: center;
+            transition: all 200ms;
+            vertical-align: baseline;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Settings</h1>
     <form action="{% url 'profitpal' %}" style="display: flex; flex-direction: column; width: 400px; gap: 10px;">
         <div>
-            <label for="StartTime">Start Time</label>
-            <input type="text" name="StartTime" id="startTime" placeholder="Start Time" value="08:40:00">
+            <label for="StartDate">Start Date (Y/M/D)</label>
+            <input type="text" name="StartDate" id="startDate" placeholder="Start Date" value={{form.StartDate}}>
         </div>
-        
+
+        <div>
+            <label for="EndDate">End Date (Y/M/D)</label>
+            <input type="text" name="EndDate" id="endDate" placeholder="End Date" value={{form.EndDate}}>
+        </div>
+
+        <div>
+            <label for="StartTime">Start Time</label>
+            <input type="text" name="StartTime" id="startTime" placeholder="Start Time" value={{form.StartTime}}>
+        </div>
+
         <div>
             <label for="EndTime">End Time</label>
-            <input type="text" name="EndTime" id="endTime" placeholder="End Time" value="09:50:00">
+            <input type="text" name="EndTime" id="endTime" placeholder="End Time" value={{form.EndTime}}>
         </div>
-        
+
 
         <div>
             <label for="TP">Target Ticks</label>
-            <input type="text" name="TP" id="TP" placeholder="Target Ticks" value="17">
+            <input type="text" name="TP" id="TP" placeholder="Target Ticks" value={{form.TP}}>
         </div>
-        
+
 
         <div>
             <label for="SL">Stop Ticks</label>
-            <input type="text" name="SL" id="SL" placeholder="Stop Ticks" value="23">
+            <input type="text" name="SL" id="SL" placeholder="Stop Ticks" value={{form.SL}}>
         </div>
-        
 
+        {% if 'smaFilter' in form %}
         <div>
             <label for="smaFilter">Enable SMA Filter</label>
             <input type="checkbox" name="smaFilter" id="smaFilter" checked>
         </div>
-        
+        {% else %}
+        <div>
+            <label for="smaFilter">Enable SMA Filter</label>
+            <input type="checkbox" name="smaFilter" id="smaFilter">
+        </div>
+        {% endif %}
+
         <div>
             <label for="SMALength">SMA Length</label>
-            <input type="text" name="SMALength" id="SMALength" placeholder="SMA Length" value="1650">
+            <input type="text" name="SMALength" id="SMALength" placeholder="SMA Length" value={{form.SMALength}}>
         </div>
-        
+
         <div>
             <label for="bLength">Bollinger Length</label>
-            <input type="text" name="bLength" id="bLength" placeholder="Bollinger Length" value="21">
+            <input type="text" name="bLength" id="bLength" placeholder="Bollinger Length" value={{form.bLength}}>
         </div>
-        
+
 
         <div>
             <label for="bDev">Bollinger Deviation</label>
-            <input type="text" name="bDev" id="bDev" placeholder="Bollinger Deviation" value="2.4">
+            <input type="text" name="bDev" id="bDev" placeholder="Bollinger Deviation" value={{form.bDev}}>
         </div>
-        
+
 
         <div>
             <label for="adxLen">ADX Length</label>
-            <input type="text" name="adxLen" id="adxLen" placeholder="ADX Length" value="14">
+            <input type="text" name="adxLen" id="adxLen" placeholder="ADX Length" value={{form.adxLen}}>
         </div>
-        
+
 
         <div>
             <label for="minADX">Min ADX</label>
-            <input type="text" name="minADX" id="minADX" placeholder="Min ADX" value="0">
+            <input type="text" name="minADX" id="minADX" placeholder="Min ADX" value={{form.minADX}}>
         </div>
-        
+
 
         <div>
             <label for="maxADX">Max ADX</label>
-            <input type="text" name="maxADX" id="maxADX" placeholder="Max ADX" value="100">
+            <input type="text" name="maxADX" id="maxADX" placeholder="Max ADX" value={{form.maxADX}}>
         </div>
-        
+
 
         <div>
             <label for="atrLen">ATR Length</label>
-            <input type="text" name="atrLen" id="atrLen" placeholder="ATR Length" value="14">
+            <input type="text" name="atrLen" id="atrLen" placeholder="ATR Length" value={{form.atrLen}}>
         </div>
-        
+
 
         <div>
             <label for="minATR">Min ATR</label>
-            <input type="text" name="minATR" id="minATR" placeholder="Min ATR" value="0">
+            <input type="text" name="minATR" id="minATR" placeholder="Min ATR" value={{form.minATR}}>
         </div>
-        
+
 
         <div>
             <label for="maxATR">Max ATR</label>
-            <input type="text" name="maxATR" id="maxATR" placeholder="Max ATR" value="100">
+            <input type="text" name="maxATR" id="maxATR" placeholder="Max ATR" value={{form.maxATR}}>
         </div>
-        
+
 
         <div>
             <label for="bMin">Bollinger Band Width Minimum</label>
-            <input type="text" name="bMin" id="bMin" placeholder="Bollinger Band Width Minimum" value="1">
+            <input type="text" name="bMin" id="bMin" placeholder="Bollinger Band Width Minimum" value={{form.bMin}}>
         </div>
-        
+
 
         <div>
             <label for="bMax">Bollinger Band Width Maximum</label>
-            <input type="text" name="bMax" id="bMax" placeholder="Bollinger Band Width Maximum" value="100">
+            <input type="text" name="bMax" id="bMax" placeholder="Bollinger Band Width Maximum" value={{form.bMax}}>
         </div>
-        
+
 
         <!-- <div>
             <label for="beforeEntry">Confirmation Before Entry</label>
             <input type="checkbox" name="beforeEntry" id="beforeEntry">
         </div> -->
-
+        {% if 'rsiFilter' in form %}
+        <div>
+            <label for="rsiFilter">RSI Entry Filter Enabled</label>
+            <input type="checkbox" name="rsiFilter" id="rsiFilter" checked>
+        </div>
+        {% else %}
         <div>
             <label for="rsiFilter">RSI Entry Filter Enabled</label>
             <input type="checkbox" name="rsiFilter" id="rsiFilter">
         </div>
+        {% endif %}
 
         <div>
             <label for="rsiLen">RSI Entry Period</label>
-            <input type="text" name="rsiLen" id="rsiLen" placeholder="RSI Entry Period" value="14">
+            <input type="text" name="rsiLen" id="rsiLen" placeholder="RSI Entry Period" value={{form.rsiLen}}>
         </div>
-        
+
 
         <div>
             <label for="OB">Entry Overbought Value</label>
-            <input type="text" name="OB" id="OB" placeholder="Entry Overbought Value" value="80">
+            <input type="text" name="OB" id="OB" placeholder="Entry Overbought Value" value={{form.OB}}>
         </div>
-        
+
 
         <div>
             <label for="OS">Entry Oversold Value</label>
-            <input type="text" name="OS" id="OS" placeholder="Entry Oversold Value" value="20">
+            <input type="text" name="OS" id="OS" placeholder="Entry Oversold Value" value={{form.OS}}>
         </div>
-        
+
 
         <!-- <div>
             <label for="maxProfit">Max Daily Profit</label>
@@ -140,30 +190,165 @@
             <label for="maxLoss">Max Daily Loss</label>
             <input type="text" name="maxLoss" id="maxLoss" placeholder="Max Daily Loss" value="2500">
         </div> -->
-        
 
+        <div>
+            <label for="TF">Time Frame in this Format: #min for minutes OR #H in hours</label>
+            <input type="text" name="TF" id="TF" value={{form.TF}}>
+        </div>
         <button type="submit">RUN</button>
     </form>
 
 
 
     <h1>Stats</h1>
-    {{stats|safe}}
+    <div id="Stats">
+        <button onclick="StatsTableToCSV()">EXPORT STATS TO CSV</button>
+        {{stats|safe}}
+    </div>
+
 
     <hr>
     <h1>Trades</h1>
-    {{trades|safe}}
+    <div id="Trades">
+        <button onclick="TradesTableToCSV()">EXPORT TRADES TO CSV</button>
+        {{trades|safe}}
+    </div>
 
 
 
-    <h1>Chart</h1>
-    
 
-    <div hx-get="/test" hx-swap="innerHTML">
+    <!-- <h1>Chart</h1>
+
+
+    <div hx-get="/test" hx-target="#chart-target" hx-swap="innerHTML" class="button-2"
+        style="width: 250px; margin-bottom: 25px;">
         SHOW Interactive chart
     </div>
 
 
+    <div id="chart-target">
+
+    </div> -->
+
     <script src="/static/js/htmx.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        function selection() {
+
+            console.log(talbe1);
+
+            let rows = talbe1.getElementsByTagName('tr');
+            console.log(rows);
+        }
+
+
+
+
+
+        function StatsTableToCSV() {
+
+            // Variable to store the final csv data
+            let csv_data = [];
+
+            //Get table 1 Id
+            let table1 = document.getElementById("Stats");
+
+            // Get each row data
+            //let rows = document.getElementsByTagName('tr');
+            let rows = table1.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+
+                // Get each column data
+                let cols = rows[i].querySelectorAll('td,th');
+
+                // Stores each csv row data
+                let csvrow = [];
+                for (let j = 0; j < cols.length; j++) {
+
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+
+            // Call this function to download csv file  
+            downloadCSVFile(csv_data,"Stats_ProfitPal.csv");
+
+        }
+
+
+        function TradesTableToCSV() {
+
+            // Variable to store the final csv data
+            let csv_data = [];
+
+            //Get table 1 Id
+            let table1 = document.getElementById("Trades");
+
+            // Get each row data
+            //let rows = document.getElementsByTagName('tr');
+            let rows = table1.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+
+                // Get each column data
+                let cols = rows[i].querySelectorAll('td,th');
+
+                // Stores each csv row data
+                let csvrow = [];
+                for (let j = 0; j < cols.length; j++) {
+
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+
+            // Call this function to download csv file  
+            downloadCSVFile(csv_data,"Trades_ProfitPal.csv");
+
+        }
+
+        function downloadCSVFile(csv_data,filename) {
+
+            // Create CSV file object and feed
+            // our csv_data into it
+            CSVFile = new Blob([csv_data], {
+                type: "text/csv"
+            });
+
+            // Create to temporary link to initiate
+            // download process
+            let temp_link = document.createElement('a');
+
+            // Download csv file
+            temp_link.download = filename;
+            let url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+
+            // This link should not be displayed
+            temp_link.style.display = "none";
+            document.body.appendChild(temp_link);
+
+            // Automatically click the link to
+            // trigger download
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
 </body>
+
 </html>
