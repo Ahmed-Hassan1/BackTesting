@@ -66,17 +66,17 @@ def profitPal(request):
     inputs={
         "StartDate":"2024/03/07",
         "EndDate":"2024/06/17",
-        "StartTime":"08:40:00",
-        "EndTime":"09:50:00",
+        "StartTime":"09:40:00",
+        "EndTime":"10:50:00",
         "TP":"17",
         "SL":"23",
         "smaFilter":"Yes",
         "SMALength":"1650",
-        "bLength":"21",
-        "bDev":"2.4",
+        "bLength":"39",
+        "bDev":"2.25",
         "adxLen":"14",
-        "minADX":"0",
-        "maxADX":"100",
+        "minADX":"18",
+        "maxADX":"52",
         "atrLen":"14",
         "minATR":"0",
         "maxATR":"100",
@@ -85,7 +85,7 @@ def profitPal(request):
         "rsiLen":"14",
         "OB":"80",
         "OS":"20",
-        "TF":"1min"
+        "TF":"2min"
     }
     if request.method=='GET' and 'rsiLen' in request.GET:
         startDate=request.GET['StartDate']
@@ -141,7 +141,74 @@ def profitPal(request):
         removed_stats=stats.drop("_equity_curve")
         removed_stats=removed_stats.drop("_trades")
 
-        trades_df=pd.DataFrame(data=stats.to_dict()["_trades"])
+        
+        tradesDict=stats.to_dict()["_trades"]
+
+        grossProfit=0
+        for pnl in tradesDict['PnL']:
+            if float(pnl)>0:
+                grossProfit+=float(pnl)*50
+
+        consWinners=0
+        consLosers=0
+        maxWin=0
+        maxLoss=0
+        for tr in tradesDict['PnL']:
+            if float(tr)>0:
+                consWinners+=1
+                if consLosers>0:
+                    maxLoss+=max(maxLoss,consLosers)-maxLoss
+                consLosers-=consLosers
+            if float(tr)<0:
+                consLosers+=1
+                if consWinners>0:
+                    maxWin+=max(maxWin,consWinners)-maxWin
+                consWinners-=consWinners
+
+        maxLoss+=max(maxLoss,consLosers)-maxLoss
+        maxWin+=max(maxWin,consWinners)-maxWin
+
+        #print("GROSS: " + str(grossProfit) )
+        #print(removed_stats.to_dict().keys())
+        #print(removed_stats.to_dict().values())
+
+        keyList=list(removed_stats.to_dict().keys())
+        valueList=list(removed_stats.to_dict().values())
+        highlighted_key=[]
+        highlighted_value=[]
+
+
+        #Gross Profit
+        highlighted_key.append("Gross Profit")
+        highlighted_value.append(grossProfit)
+        #Net Profit
+        highlighted_key.append("Net Profit")
+        highlighted_value.append((int(valueList[4])-10000)*50)
+        #Profit Factor
+        highlighted_key.append(keyList[24])
+        highlighted_value.append(valueList[24])
+        #Sharpe Ratio
+        highlighted_key.append(keyList[10])
+        highlighted_value.append(valueList[10])
+        #Trades number
+        highlighted_key.append(keyList[17])
+        highlighted_value.append(valueList[17])
+        #Cons Winners
+        highlighted_key.append("Cons Winners")
+        highlighted_value.append(maxWin)
+        #Cons Losers
+        highlighted_key.append("Cons Losers")
+        highlighted_value.append(maxLoss)
+        #Win Rate
+        highlighted_key.append(keyList[18])
+        highlighted_value.append(valueList[18])
+        #Average Trade
+        highlighted_key.append("Avg Trade")
+        highlighted_value.append(float(valueList[21])*100*50 )
+
+
+
+        trades_df=pd.DataFrame(data=tradesDict)
 
         for idx in range(0,trades_df['Size'].count()):
             if int(trades_df['Size'][idx])>0:
@@ -149,7 +216,7 @@ def profitPal(request):
             else:
                 trades_df['Size'][idx]="Short"
 
-        return render(request,"bt/profitpal.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET})
+        return render(request,"bt/profitpal.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET,"hl_keys":highlighted_key,"hl_values":highlighted_value})
 
     return render(request,"bt/profitpal.html",{"form":inputs})
 

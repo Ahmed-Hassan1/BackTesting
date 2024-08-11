@@ -31,6 +31,52 @@
             -webkit-user-select: none;
             touch-action: manipulation;
         }
+
+        table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+  
+}
+
+td{
+    overflow-wrap:anywhere;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
     </style>
 </head>
 
@@ -199,9 +245,29 @@
     </form>
 
 
+    <h1>Highlighted Stats</h1>
+    <p>The Profit and Avg Trade are in Dollars</p>
+    <table>
+        <thead >
+            <tr>
+                {% for key in hl_keys %}
+                <th>{{key}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for value in hl_values %}
+                <td>{{value|floatformat:2}}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+        
+    </table>
 
     <h1>Stats</h1>
-    <div id="Stats">
+    <p>The Profit and Avg Trade are in Pure Points</p>
+    <div id="Stats" style="width: 500px;">
         <button onclick="StatsTableToCSV()">EXPORT STATS TO CSV</button>
         {{stats|safe}}
     </div>

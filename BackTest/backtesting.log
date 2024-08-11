@@ -118,3 +118,104 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 135, in profitPal
+    stats=bt.run(
+          ^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1219, in run
+    strategy.next()
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 61, in next
+    self.sell(tp=self.data.Close[-1]-self.TP*0.25,sl=self.data.Close[-1]+self.SL*0.25,size=-0.01)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 231, in sell
+    assert 0 < size < 1 or round(size) == size, \
+AssertionError: size must be a positive fraction of equity, or a positive whole number of units
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 150, in profitPal
+    highlighted_key.append(removed_stats.to_dict().keys()[24])
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+TypeError: 'dict_keys' object is not subscriptable
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 135, in profitPal
+    stats=bt.run(
+          ^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 1219, in run
+    strategy.next()
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 61, in next
+    self.sell(tp=self.data.Close[-1]-self.TP*0.25,sl=self.data.Close[-1]+self.SL*0.25,size=-50)
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 233, in sell
+    return self._broker.new_order(-size, limit, stop, sl, tp, tag)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\backtesting\backtesting.py", line 748, in new_order
+    raise ValueError(
+ValueError: Long orders require: SL (5286.5) < LIMIT (5280.75) < TP (5276.5)
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 149, in profitPal
+    if float(trade['PnL'])>0:
+             ~~~~~^^^^^^^
+TypeError: string indices must be integers, not 'str'
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 148, in profitPal
+    for key,val in tradesDict:
+        ^^^^^^^
+ValueError: too many values to unpack (expected 2)
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 148, in profitPal
+    for key,val in tradesDict:
+        ^^^^^^^
+ValueError: too many values to unpack (expected 2)
+ERROR:django.request:Internal Server Error: /profitpal
+Traceback (most recent call last):
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\STUFF\E\django\BacktestingEngine\BackTest\bt\views.py", line 148, in profitPal
+    for key,val in tradesDict:
+        ^^^^^^^
+ValueError: too many values to unpack (expected 2)
