@@ -52,7 +52,6 @@ class ProfitPal(Strategy):
         
         #logging.info(str(self.data.index[-1])+"  "+str(currentTimeInMinutes>=520 and currentTimeInMinutes<590) +"    "+str(currentTimeInMinutes))
         if currentTimeInMinutes>=self.StartTime and currentTimeInMinutes<self.StopTime and not self.position:
-            # logging.info(str(self.data.index[-1])+"   1")
             if bollingerBandWidth >= self.minBB and bollingerBandWidth<=self.maxBB and self.adx[0][-1]>=self.minADX and self.adx[0][-1]<=self.maxADX and self.atr[-1]>=self.minATR and self.atr[-1]<=self.maxATR:
                 if (not self.SMAFilter or self.data.Close[-1]>self.sma[-1]) and self.data.Close[-1]<self.bollinger[0][-1] and self.data.Close[-2]<self.bollinger[0][-2] and (not self.RSIFilter or self.rsi[-1]<self.OS):
                     self.buy(tp=self.data.Close[-1]+self.TP*0.25,sl=self.data.Close[-1]-self.SL*0.25,size=1)
@@ -99,17 +98,17 @@ class DK_MA_Cloud(Strategy):
 
         allow_trading= currentTimeInMinutes>=self.StartTime and currentTimeInMinutes<self.StopTime and self.adx[0][-1]>=self.MinAdx and self.adx[0][-1]<=self.MaxAdx
 
-        logging.info("L: "+str(self.data.index[-1])+"  "+str(crossAbove)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != 1)+"  "+str(isPriceAboveSmaFilter)+"  "+str(isPriceAboveEmaFilter))
-        logging.info("S: "+str(self.data.index[-1])+"  "+str(crossBelow)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != -1)+"  "+str((not isPriceAboveSmaFilter))+"  "+str((not isPriceAboveEmaFilter)))
+        #logging.info("L: "+str(self.data.index[-1])+"  "+str(crossAbove)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != 1)+"  "+str(isPriceAboveSmaFilter)+"  "+str(isPriceAboveEmaFilter))
+        #logging.info("S: "+str(self.data.index[-1])+"  "+str(crossBelow)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != -1)+"  "+str((not isPriceAboveSmaFilter))+"  "+str((not isPriceAboveEmaFilter)))
         if crossAbove:
             if allow_trading and self.lastTradeDirection != 1 and (not self.UseSMAFilter or isPriceAboveSmaFilter) and (not self.UseEMAFilter or isPriceAboveEmaFilter) and not self.position.is_long:
                 self.buy(tp=self.data.Close[-1]+self.TargetTicks*0.25,sl=self.data.Close[-1]-self.StopTicks*0.25,size=1)
-                logging.info("LONG")
+                #logging.info("LONG")
             self.lastTradeDirection=1
         elif crossBelow:
             if allow_trading and self.lastTradeDirection != -1 and (not self.UseSMAFilter or not isPriceAboveSmaFilter) and (not self.UseEMAFilter or not isPriceAboveEmaFilter)and not self.position.is_short:
                 self.sell(tp=self.data.Close[-1]-self.TargetTicks*0.25,sl=self.data.Close[-1]+self.StopTicks*0.25,size=1)
-                logging.info("SHORT")
+                #logging.info("SHORT")
             self.lastTradeDirection=-1
 
 
