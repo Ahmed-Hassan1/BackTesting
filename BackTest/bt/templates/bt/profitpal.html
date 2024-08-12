@@ -83,6 +83,51 @@ tfoot td {
 <body>
     <h1>Settings</h1>
     <form action="{% url 'profitpal' %}" style="display: flex; flex-direction: column; width: 400px; gap: 10px;">
+
+        <h3>Data Range: 2022 DEC to July 2024</h3>
+        <div>
+            <label for="Instrument">Instrument</label>
+            {% if 'smaFilter' in form %}
+            <select name="Instrument" id="Instrument">
+                {% if inst == '0' %} 
+                <option value="0" selected>ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+                
+                {% if inst == '1' %} 
+                <option value="0">ES</option>
+                <option value="1" selected>MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+
+                {% if inst == '2' %} 
+                <option value="0" >ES</option>
+                <option value="1">MES</option>
+                <option value="2" selected>NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+
+                {% if inst == '3' %} 
+                <option value="0">ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3" selected>MNQ</option>
+                {% endif %}
+            </select>
+
+            {% else %}
+            <select name="Instrument" id="Instrument">
+                <option value="0">ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+            </select>
+            {% endif %}
+        </div>
+
         <div>
             <label for="StartDate">Start Date (Y/M/D)</label>
             <input type="text" name="StartDate" id="startDate" placeholder="Start Date" value={{form.StartDate}}>

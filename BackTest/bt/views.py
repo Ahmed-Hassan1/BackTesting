@@ -31,8 +31,6 @@ class ProfitPal(Strategy):
     OB=80
     OS=20
 
-    lastTrade=0
-
 
     def init(self):
         self.rsi=self.I(pandas_ta.rsi,pd.Series(self.data.Close),self.rsiLen)
@@ -54,11 +52,17 @@ class ProfitPal(Strategy):
         
         #logging.info(str(self.data.index[-1])+"  "+str(currentTimeInMinutes>=520 and currentTimeInMinutes<590) +"    "+str(currentTimeInMinutes))
         if currentTimeInMinutes>=self.StartTime and currentTimeInMinutes<self.StopTime and not self.position:
+            # logging.info(str(self.data.index[-1])+"   1")
             if bollingerBandWidth >= self.minBB and bollingerBandWidth<=self.maxBB and self.adx[0][-1]>=self.minADX and self.adx[0][-1]<=self.maxADX and self.atr[-1]>=self.minATR and self.atr[-1]<=self.maxATR:
                 if (not self.SMAFilter or self.data.Close[-1]>self.sma[-1]) and self.data.Close[-1]<self.bollinger[0][-1] and self.data.Close[-2]<self.bollinger[0][-2] and (not self.RSIFilter or self.rsi[-1]<self.OS):
-                    self.buy(tp=self.data.Close[-1]+self.TP*0.25,sl=self.data.Close[-1]-self.SL*0.25)
+                    x=self.buy(tp=self.data.Close[-1]+self.TP*0.25,sl=self.data.Close[-1]-self.SL*0.25,size=1)
                 elif (not self.SMAFilter or self.data.Close[-1]<self.sma[-1]) and self.data.Close[-1]>self.bollinger[2][-1] and self.data.Close[-2]>self.bollinger[2][-2] and (not self.RSIFilter or self.rsi[-1]>self.OB):
-                    self.sell(tp=self.data.Close[-1]-self.TP*0.25,sl=self.data.Close[-1]+self.SL*0.25)
+                    self.sell(tp=self.data.Close[-1]-self.TP*0.25,sl=self.data.Close[-1]+self.SL*0.25,size=1)
+
+
+class DK_MA_Cloud(Strategy):
+    StartTime=520
+    StopTime=590
 
 
 
@@ -88,6 +92,7 @@ def profitPal(request):
         "TF":"2min"
     }
     if request.method=='GET' and 'rsiLen' in request.GET:
+        Instrument=request.GET['Instrument']
         startDate=request.GET['StartDate']
         endDate=request.GET['EndDate']
         start=request.GET['StartTime']
@@ -117,20 +122,9 @@ def profitPal(request):
         os=float(request.GET['OS'])
         tf=request.GET['TF']
         
-        
-        
-        
-    
-        # data = pd.read_csv("static/media/ES_1min_sample.csv")
-        # data['timestamp']=pd.to_datetime(data['timestamp'])
-        data = pd.read_csv("static/media/ES.csv")
-        data['timestamp']=pd.to_datetime(data['timestamp'])-timedelta(hours=4,minutes=1)
-        data = data.set_index('timestamp')
-        df=data.resample(tf).agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last','Volume':'sum'})
-        df=df.loc[(startDate+' 00:00:00'):(endDate+' 23:00:00')]
-        df=df.dropna()
+        df=InstrumentChoice(startDate,endDate,tf,Instrument)
 
-        bt = Backtest(df,ProfitPal,cash=10_000)
+        bt = Backtest(df,ProfitPal,cash=100_000)
 
         stats=bt.run(
             StartTime=start,StopTime=end,TP=tp,SL=sl,SMAFilter=smaFil,smaLen=smaL,
@@ -144,10 +138,12 @@ def profitPal(request):
         
         tradesDict=stats.to_dict()["_trades"]
 
+        pointValue=PointValue(Instrument)
+
         grossProfit=0
         for pnl in tradesDict['PnL']:
             if float(pnl)>0:
-                grossProfit+=float(pnl)*50
+                grossProfit+=float(pnl)*pointValue
 
         consWinners=0
         consLosers=0
@@ -183,7 +179,7 @@ def profitPal(request):
         highlighted_value.append(grossProfit)
         #Net Profit
         highlighted_key.append("Net Profit")
-        highlighted_value.append((int(valueList[4])-10000)*50)
+        highlighted_value.append((int(valueList[4])-100_000)*pointValue)
         #Profit Factor
         highlighted_key.append(keyList[24])
         highlighted_value.append(valueList[24])
@@ -204,7 +200,7 @@ def profitPal(request):
         highlighted_value.append(valueList[18])
         #Average Trade
         highlighted_key.append("Avg Trade")
-        highlighted_value.append(float(valueList[21])*100*50 )
+        highlighted_value.append(float(valueList[21])*100*pointValue )
 
 
 
@@ -216,9 +212,56 @@ def profitPal(request):
             else:
                 trades_df['Size'][idx]="Short"
 
-        return render(request,"bt/profitpal.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET,"hl_keys":highlighted_key,"hl_values":highlighted_value})
+        return render(request,"bt/profitpal.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET,"hl_keys":highlighted_key,"hl_values":highlighted_value,"inst":Instrument})
 
     return render(request,"bt/profitpal.html",{"form":inputs})
+
+
+
+def InstrumentChoice(startDate,endDate,tf,choice):
+    #ES-0 MES-1 NQ-2 MNQ-3
+    data = [pd.read_csv("static/media/ES.csv"),pd.read_csv("static/media/MES.csv"),pd.read_csv("static/media/NQ.csv"),pd.read_csv("static/media/MNQ.csv")]
+    data[0]['timestamp']=pd.to_datetime(data[0]['timestamp'])-timedelta(hours=4,minutes=1)
+    data[1]['timestamp']=pd.to_datetime(data[1]['timestamp'])-timedelta(hours=4,minutes=1)
+    data[2]['timestamp']=pd.to_datetime(data[2]['timestamp'])-timedelta(hours=4,minutes=1)
+    data[3]['timestamp']=pd.to_datetime(data[3]['timestamp'])-timedelta(hours=4,minutes=1)
+    data[0] = data[0].set_index('timestamp')
+    data[1] = data[1].set_index('timestamp')
+    data[2] = data[2].set_index('timestamp')
+    data[3] = data[3].set_index('timestamp')
+
+    df_ES=data[0].resample(tf).agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last','Volume':'sum'})
+    df_ES=df_ES.loc[(startDate+' 00:00:00'):(endDate+' 23:00:00')]
+    df_ES=df_ES.dropna()
+    df_MES=data[1].resample(tf).agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last','Volume':'sum'})
+    df_MES=df_MES.loc[(startDate+' 00:00:00'):(endDate+' 23:00:00')]
+    df_MES=df_MES.dropna()
+    df_NQ=data[2].resample(tf).agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last','Volume':'sum'})
+    df_NQ=df_NQ.loc[(startDate+' 00:00:00'):(endDate+' 23:00:00')]
+    df_NQ=df_NQ.dropna()
+    df_MNQ=data[3].resample(tf).agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last','Volume':'sum'})
+    df_MNQ=df_MNQ.loc[(startDate+' 00:00:00'):(endDate+' 23:00:00')]
+    df_MNQ=df_MNQ.dropna()
+
+    if choice=="0":
+        return df_ES
+    if choice=="1":
+        return df_MES
+    if choice=="2":
+        return df_NQ
+    if choice=="3":
+        return df_MNQ
+
+
+def PointValue(choice):
+    if choice=="0":
+        return 50
+    if choice=="1":
+        return 5
+    if choice=="2":
+        return 20
+    if choice=="3":
+        return 2
 
 
 
