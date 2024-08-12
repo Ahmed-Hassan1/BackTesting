@@ -55,14 +55,64 @@ class ProfitPal(Strategy):
             # logging.info(str(self.data.index[-1])+"   1")
             if bollingerBandWidth >= self.minBB and bollingerBandWidth<=self.maxBB and self.adx[0][-1]>=self.minADX and self.adx[0][-1]<=self.maxADX and self.atr[-1]>=self.minATR and self.atr[-1]<=self.maxATR:
                 if (not self.SMAFilter or self.data.Close[-1]>self.sma[-1]) and self.data.Close[-1]<self.bollinger[0][-1] and self.data.Close[-2]<self.bollinger[0][-2] and (not self.RSIFilter or self.rsi[-1]<self.OS):
-                    x=self.buy(tp=self.data.Close[-1]+self.TP*0.25,sl=self.data.Close[-1]-self.SL*0.25,size=1)
+                    self.buy(tp=self.data.Close[-1]+self.TP*0.25,sl=self.data.Close[-1]-self.SL*0.25,size=1)
                 elif (not self.SMAFilter or self.data.Close[-1]<self.sma[-1]) and self.data.Close[-1]>self.bollinger[2][-1] and self.data.Close[-2]>self.bollinger[2][-2] and (not self.RSIFilter or self.rsi[-1]>self.OB):
                     self.sell(tp=self.data.Close[-1]-self.TP*0.25,sl=self.data.Close[-1]+self.SL*0.25,size=1)
 
 
 class DK_MA_Cloud(Strategy):
+    Fast=1
+    Slow=5
+    TargetTicks=20
+    StopTicks=20
+    MinAdx=20
+    MaxAdx=40
     StartTime=520
     StopTime=590
+    UseSMAFilter=True
+    SmaFilterLength=1650
+    UseEMAFilter=True
+    EmaFilterLength=55
+
+    lastTradeDirection=0
+
+    def init(self):
+        self.smaFast=self.I(pandas_ta.sma,pd.Series(self.data.Close),self.Fast)
+        self.smaSlowHigh=self.I(pandas_ta.sma,pd.Series(self.data.High),self.Slow)
+        self.smaSlowLow=self.I(pandas_ta.sma,pd.Series(self.data.Low),self.Slow)
+        self.adx=self.I(pandas_ta.adx,pd.Series(self.data.High),pd.Series(self.data.Low),pd.Series(self.data.Close),14)
+        self.smaFilter=self.I(pandas_ta.sma,pd.Series(self.data.Close),self.SmaFilterLength)
+        self.emaFilter=self.I(pandas_ta.ema,pd.Series(self.data.Close),self.EmaFilterLength)
+
+
+    def next(self):
+
+        current=datetime.strptime(str(self.data.index[-1]),'%Y-%m-%d  %H:%M:%S')
+
+        currentTimeInMinutes=current.hour*60+current.minute
+
+        crossAbove=self.smaFast[-1]>self.smaSlowHigh[-1] and self.smaFast[-2]<self.smaSlowHigh[-2]
+        crossBelow=self.smaFast[-1]<self.smaSlowLow[-1] and self.smaFast[-2]>self.smaSlowLow[-2]
+
+        isPriceAboveSmaFilter = self.data.Close[-1] > self.smaFilter[-1]
+        isPriceAboveEmaFilter = self.data.Close[-1] > self.emaFilter[-1]
+
+        allow_trading= currentTimeInMinutes>=self.StartTime and currentTimeInMinutes<self.StopTime and self.adx[0][-1]>=self.MinAdx and self.adx[0][-1]<=self.MaxAdx
+
+        logging.info("L: "+str(self.data.index[-1])+"  "+str(crossAbove)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != 1)+"  "+str(isPriceAboveSmaFilter)+"  "+str(isPriceAboveEmaFilter))
+        logging.info("S: "+str(self.data.index[-1])+"  "+str(crossBelow)+"  "+str(allow_trading)+"  "+str(self.lastTradeDirection != -1)+"  "+str((not isPriceAboveSmaFilter))+"  "+str((not isPriceAboveEmaFilter)))
+        if crossAbove:
+            if allow_trading and self.lastTradeDirection != 1 and (not self.UseSMAFilter or isPriceAboveSmaFilter) and (not self.UseEMAFilter or isPriceAboveEmaFilter) and not self.position.is_long:
+                self.buy(tp=self.data.Close[-1]+self.TargetTicks*0.25,sl=self.data.Close[-1]-self.StopTicks*0.25,size=1)
+                logging.info("LONG")
+            self.lastTradeDirection=1
+        elif crossBelow:
+            if allow_trading and self.lastTradeDirection != -1 and (not self.UseSMAFilter or not isPriceAboveSmaFilter) and (not self.UseEMAFilter or not isPriceAboveEmaFilter)and not self.position.is_short:
+                self.sell(tp=self.data.Close[-1]-self.TargetTicks*0.25,sl=self.data.Close[-1]+self.StopTicks*0.25,size=1)
+                logging.info("SHORT")
+            self.lastTradeDirection=-1
+
+
 
 
 
@@ -215,6 +265,150 @@ def profitPal(request):
         return render(request,"bt/profitpal.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET,"hl_keys":highlighted_key,"hl_values":highlighted_value,"inst":Instrument})
 
     return render(request,"bt/profitpal.html",{"form":inputs})
+
+
+
+
+
+def dkMACloud(request):
+    inputs={
+        "StartDate":"2024/03/07",
+        "EndDate":"2024/06/17",
+        "Fast":"1",
+        "Slow":"5",
+        "TargetTicks":"20",
+        "StopTicks":"20",
+        "MinAdx":"20",
+        "MaxAdx":"40",
+        "StartTime":"09:40:00",
+        "EndTime":"10:50:00",
+        "UseSMAFilter":"Yes",
+        "SmaFilterLength":1650,
+        "UseEMAFilter":"Yes",
+        "EmaFilterLength":55,
+        "TF":"2min"
+    }
+
+    if request.method=='GET' and 'Fast' in request.GET:
+        Instrument=request.GET['Instrument']
+        startDate=request.GET['StartDate']
+        endDate=request.GET['EndDate']
+
+        start=request.GET['StartTime']
+        end=request.GET['EndTime']
+        start=datetime.strptime(start,'%H:%M:%S')
+        end=datetime.strptime(end,'%H:%M:%S')
+        start=start.hour*60+start.minute-2
+        end=end.hour*60+end.minute
+
+        fast=int(request.GET['Fast'])
+        slow=int(request.GET['Slow'])
+        targetTicks=int(request.GET['TargetTicks'])
+        stopTicks=int(request.GET['StopTicks'])
+        minAdx=float(request.GET['MinAdx'])
+        maxAdx=float(request.GET['MaxAdx'])
+        smaFilter=True if 'UseSMAFilter' in request.GET else False
+        smaLen=int(request.GET['SmaFilterLength'])
+        emaFilter=True if 'UseEMAFilter' in request.GET else False
+        emaLen=int(request.GET['EmaFilterLength'])
+        tf=request.GET['TF']
+
+
+        df=InstrumentChoice(startDate,endDate,tf,Instrument)
+
+        print(df.head())
+
+        bt = Backtest(df,DK_MA_Cloud,cash=100_000)
+
+        stats=bt.run(
+            StartTime=start,StopTime=end,Fast=fast,Slow=slow,TargetTicks=targetTicks,StopTicks=stopTicks,
+            MinAdx=minAdx,MaxAdx=maxAdx,UseSMAFilter=smaFilter,SmaFilterLength=smaLen,UseEMAFilter=emaFilter,
+            EmaFilterLength=emaLen
+        )
+
+        removed_stats=stats.drop("_equity_curve")
+        removed_stats=removed_stats.drop("_trades")
+
+        
+        tradesDict=stats.to_dict()["_trades"]
+
+        pointValue=PointValue(Instrument)
+
+        grossProfit=0
+        for pnl in tradesDict['PnL']:
+            if float(pnl)>0:
+                grossProfit+=float(pnl)*pointValue
+
+        consWinners=0
+        consLosers=0
+        maxWin=0
+        maxLoss=0
+        for tr in tradesDict['PnL']:
+            if float(tr)>0:
+                consWinners+=1
+                if consLosers>0:
+                    maxLoss+=max(maxLoss,consLosers)-maxLoss
+                consLosers-=consLosers
+            if float(tr)<0:
+                consLosers+=1
+                if consWinners>0:
+                    maxWin+=max(maxWin,consWinners)-maxWin
+                consWinners-=consWinners
+
+        maxLoss+=max(maxLoss,consLosers)-maxLoss
+        maxWin+=max(maxWin,consWinners)-maxWin
+
+        #print("GROSS: " + str(grossProfit) )
+        #print(removed_stats.to_dict().keys())
+        #print(removed_stats.to_dict().values())
+
+        keyList=list(removed_stats.to_dict().keys())
+        valueList=list(removed_stats.to_dict().values())
+        highlighted_key=[]
+        highlighted_value=[]
+
+
+        #Gross Profit
+        highlighted_key.append("Gross Profit")
+        highlighted_value.append(grossProfit)
+        #Net Profit
+        highlighted_key.append("Net Profit")
+        highlighted_value.append((int(valueList[4])-100_000)*pointValue)
+        #Profit Factor
+        highlighted_key.append(keyList[24])
+        highlighted_value.append(valueList[24])
+        #Sharpe Ratio
+        highlighted_key.append(keyList[10])
+        highlighted_value.append(valueList[10])
+        #Trades number
+        highlighted_key.append(keyList[17])
+        highlighted_value.append(valueList[17])
+        #Cons Winners
+        highlighted_key.append("Cons Winners")
+        highlighted_value.append(maxWin)
+        #Cons Losers
+        highlighted_key.append("Cons Losers")
+        highlighted_value.append(maxLoss)
+        #Win Rate
+        highlighted_key.append(keyList[18])
+        highlighted_value.append(valueList[18])
+        #Average Trade
+        highlighted_key.append("Avg Trade")
+        highlighted_value.append(float(valueList[21])*100*pointValue )
+
+
+
+        trades_df=pd.DataFrame(data=tradesDict)
+
+        for idx in range(0,trades_df['Size'].count()):
+            if int(trades_df['Size'][idx])>0:
+                trades_df['Size'][idx]="Long"
+            else:
+                trades_df['Size'][idx]="Short"
+
+        return render(request,"bt/dkmacloud.html",{'trades':trades_df.to_html(),"stats":removed_stats.to_frame().to_html(),"form":request.GET,"hl_keys":highlighted_key,"hl_values":highlighted_value,"inst":Instrument})
+
+    return render(request,"bt/dkmacloud.html",{"form":inputs})
 
 
 

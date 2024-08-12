@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.5.0.min.js"></script>
+    <title>DK MA Cloud</title>
+
+    <style>
+        /* CSS */
+        .button-2 {
+            background-color: rgb(0, 13, 134);
+            border-radius: 8px;
+            border-width: 0;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 10px 12px;
+            text-align: center;
+            transition: all 200ms;
+            vertical-align: baseline;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+  
+}
+
+td{
+    overflow-wrap:anywhere;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Settings</h1>
+    <form action="{% url 'dkmacloud' %}" style="display: flex; flex-direction: column; width: 400px; gap: 10px;">
+
+        <h3>Data Range: 2022 DEC to July 2024</h3>
+        <div>
+            <label for="Instrument">Instrument</label>
+            {% if 'smaFilter' in form %}
+            <select name="Instrument" id="Instrument">
+                {% if inst == '0' %} 
+                <option value="0" selected>ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+                
+                {% if inst == '1' %} 
+                <option value="0">ES</option>
+                <option value="1" selected>MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+
+                {% if inst == '2' %} 
+                <option value="0" >ES</option>
+                <option value="1">MES</option>
+                <option value="2" selected>NQ</option>
+                <option value="3">MNQ</option>
+                {% endif %}
+
+                {% if inst == '3' %} 
+                <option value="0">ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3" selected>MNQ</option>
+                {% endif %}
+            </select>
+
+            {% else %}
+            <select name="Instrument" id="Instrument">
+                <option value="0">ES</option>
+                <option value="1">MES</option>
+                <option value="2">NQ</option>
+                <option value="3">MNQ</option>
+            </select>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="StartDate">Start Date (Y/M/D)</label>
+            <input type="text" name="StartDate" id="startDate" placeholder="Start Date" value={{form.StartDate}}>
+        </div>
+
+        <div>
+            <label for="EndDate">End Date (Y/M/D)</label>
+            <input type="text" name="EndDate" id="endDate" placeholder="End Date" value={{form.EndDate}}>
+        </div>
+
+        <div>
+            <label for="StartTime">Start Time</label>
+            <input type="text" name="StartTime" id="startTime" placeholder="Start Time" value={{form.StartTime}}>
+        </div>
+
+        <div>
+            <label for="EndTime">End Time</label>
+            <input type="text" name="EndTime" id="endTime" placeholder="End Time" value={{form.EndTime}}>
+        </div>
+
+
+        <div>
+            <label for="Fast">Fast</label>
+            <input type="text" name="Fast" id="Fast" placeholder="Fast" value={{form.Fast}}>
+        </div>
+
+
+        <div>
+            <label for="Slow">Slow</label>
+            <input type="text" name="Slow" id="Slow" placeholder="Slow" value={{form.Slow}}>
+        </div>
+
+        <div>
+            <label for="TargetTicks">Target Ticks</label>
+            <input type="text" name="TargetTicks" id="TargetTicks" placeholder="Target Ticks" value={{form.TargetTicks}}>
+        </div>
+
+        <div>
+            <label for="StopTicks">Stop Ticks</label>
+            <input type="text" name="StopTicks" id="StopTicks" placeholder="Stop Ticks" value={{form.StopTicks}}>
+        </div>
+
+        <div>
+            <label for="MinAdx">Min Adx</label>
+            <input type="text" name="MinAdx" id="MinAdx" placeholder="Min Adx" value={{form.MinAdx}}>
+        </div>
+
+        <div>
+            <label for="MaxAdx">Max Adx</label>
+            <input type="text" name="MaxAdx" id="MaxAdx" placeholder="Max Adx" value={{form.MaxAdx}}>
+        </div>
+
+        {% if 'UseSMAFilter' in form %}
+        <div>
+            <label for="UseSMAFilter">UseSMAFilter</label>
+            <input type="checkbox" name="UseSMAFilter" id="UseSMAFilter" checked>
+        </div>
+        {% else %}
+        <div>
+            <label for="UseSMAFilter">UseSMAFilter</label>
+            <input type="checkbox" name="UseSMAFilter" id="UseSMAFilter">
+        </div>
+        {% endif %}
+
+        <div>
+            <label for="SmaFilterLength">SmaFilterLength</label>
+            <input type="text" name="SmaFilterLength" id="SmaFilterLength" placeholder="SmaFilterLength" value={{form.SmaFilterLength}}>
+        </div>
+
+        {% if 'UseEMAFilter' in form %}
+        <div>
+            <label for="UseEMAFilter">UseEMAFilter</label>
+            <input type="checkbox" name="UseEMAFilter" id="UseEMAFilter" checked>
+        </div>
+        {% else %}
+        <div>
+            <label for="UseEMAFilter">UseEMAFilter</label>
+            <input type="checkbox" name="UseEMAFilter" id="UseEMAFilter">
+        </div>
+        {% endif %}
+
+
+        <div>
+            <label for="maxADX">EmaFilterLength</label>
+            <input type="text" name="EmaFilterLength" id="EmaFilterLength" placeholder="EmaFilterLength" value={{form.EmaFilterLength}}>
+        </div>
+
+        <div>
+            <label for="TF">Time Frame in this Format: #min for minutes OR #H in hours</label>
+            <input type="text" name="TF" id="TF" value={{form.TF}}>
+        </div>
+        <button type="submit">RUN</button>
+    </form>
+
+
+    <h1>Highlighted Stats</h1>
+    <p>The Profit and Avg Trade are in Dollars</p>
+    <table>
+        <thead >
+            <tr>
+                {% for key in hl_keys %}
+                <th>{{key}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for value in hl_values %}
+                <td>{{value|floatformat:2}}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <h1>Stats</h1>
+    <p>The Profit and Avg Trade are in Pure Points</p>
+    <div id="Stats" style="width: 500px;">
+        <button onclick="StatsTableToCSV()">EXPORT STATS TO CSV</button>
+        {{stats|safe}}
+    </div>
+
+
+    <hr>
+    <h1>Trades</h1>
+    <div id="Trades">
+        <button onclick="TradesTableToCSV()">EXPORT TRADES TO CSV</button>
+        {{trades|safe}}
+    </div>
+
+
+
+
+    <!-- <h1>Chart</h1>
+
+
+    <div hx-get="/test" hx-target="#chart-target" hx-swap="innerHTML" class="button-2"
+        style="width: 250px; margin-bottom: 25px;">
+        SHOW Interactive chart
+    </div>
+
+
+    <div id="chart-target">
+
+    </div> -->
+
+    <script src="/static/js/htmx.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        function selection() {
+
+            console.log(talbe1);
+
+            let rows = talbe1.getElementsByTagName('tr');
+            console.log(rows);
+        }
+
+
+
+
+
+        function StatsTableToCSV() {
+
+            // Variable to store the final csv data
+            let csv_data = [];
+
+            //Get table 1 Id
+            let table1 = document.getElementById("Stats");
+
+            // Get each row data
+            //let rows = document.getElementsByTagName('tr');
+            let rows = table1.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+
+                // Get each column data
+                let cols = rows[i].querySelectorAll('td,th');
+
+                // Stores each csv row data
+                let csvrow = [];
+                for (let j = 0; j < cols.length; j++) {
+
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+
+            // Call this function to download csv file  
+            downloadCSVFile(csv_data,"Stats_DKMACloud.csv");
+
+        }
+
+
+        function TradesTableToCSV() {
+
+            // Variable to store the final csv data
+            let csv_data = [];
+
+            //Get table 1 Id
+            let table1 = document.getElementById("Trades");
+
+            // Get each row data
+            //let rows = document.getElementsByTagName('tr');
+            let rows = table1.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+
+                // Get each column data
+                let cols = rows[i].querySelectorAll('td,th');
+
+                // Stores each csv row data
+                let csvrow = [];
+                for (let j = 0; j < cols.length; j++) {
+
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+
+            // Call this function to download csv file  
+            downloadCSVFile(csv_data,"Trades_DKMACloud.csv");
+
+        }
+
+        function downloadCSVFile(csv_data,filename) {
+
+            // Create CSV file object and feed
+            // our csv_data into it
+            CSVFile = new Blob([csv_data], {
+                type: "text/csv"
+            });
+
+            // Create to temporary link to initiate
+            // download process
+            let temp_link = document.createElement('a');
+
+            // Download csv file
+            temp_link.download = filename;
+            let url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+
+            // This link should not be displayed
+            temp_link.style.display = "none";
+            document.body.appendChild(temp_link);
+
+            // Automatically click the link to
+            // trigger download
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
+</body>
+
+</html>
